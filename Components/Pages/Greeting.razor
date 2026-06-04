@@ -1,0 +1,29 @@
+﻿@page "/greeting"
+<div class="card-body p-4">
+    <!-- Two-way Data Binding Input Field (JavaScript helper ensures instant updates) -->
+    <div class="mb-4">
+        <label for="userName" class="form-label fw-bold text-secondary">Enter Your Name:</label>
+        <input type="text"
+               id="userName"
+               class="form-control form-control-lg"
+               value="@userName"
+               oninput="updateGreeting(this.value)"
+               placeholder="Type your name here..." />
+    </div>
+
+    <hr class="my-4" />
+
+    <!-- One-way Data Binding UI Output -->
+    <div class="alert alert-success py-3 shadow-sm" role="alert" style="border-radius: 8px;">
+        <h4 class="alert-heading fw-bold mb-2 fs-5">
+            <i class="bi bi-chat-left-text-fill me-2"></i>Greeting:
+        </h4>
+        <p id="greetingText" class="mb-0 fs-6 fw-semibold text-success">
+            Hello, Guest! Please enter your name above.
+        </p>
+    </div>
+</div>
+
+<div class="card-footer bg-light text-muted text-end py-2" style="border-bottom-left-radius: 11px; border-bottom-right-radius: 11px;">
+    <small>Developed by: <strong class="text-dark">@DeveloperName</strong></small>
+</div>
